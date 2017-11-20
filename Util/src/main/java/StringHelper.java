@@ -71,7 +71,21 @@ public class StringHelper {
      *  returns an empty string if toSearchFor is not found within toSearchIn
      */
     public static String leftOf(String toSearchIn, String toSearchFor, int nChars, boolean trimResult) {
-        return null;
+        if (toSearchFor == null || toSearchIn == null) return "";
+
+        int firstO = toSearchIn.indexOf(toSearchFor);
+        if (firstO < 0) return "";
+
+        if (nChars == 0) {
+            nChars = firstO;
+        }
+
+        String res = toSearchIn.substring(firstO - nChars, firstO);
+        if (trimResult) {
+            res = res.trim();
+        }
+
+        return res;
     }
 
     /**
@@ -80,7 +94,7 @@ public class StringHelper {
      *     trimResult=true
      */
     public static String leftOf(String toSearchIn, String toSearchFor) {
-        return rightOf(toSearchIn, toSearchFor, 0, true);
+        return leftOf(toSearchIn, toSearchFor, 0, true);
     }
 
     /**
@@ -88,7 +102,7 @@ public class StringHelper {
      *     trimResult=true
      */
     public static String leftOf(String toSearchIn, String toSearchFor, int nChars){
-        return rightOf(toSearchIn, toSearchFor, nChars, true);
+        return leftOf(toSearchIn, toSearchFor, nChars, true);
     }
 
     /**
@@ -96,7 +110,7 @@ public class StringHelper {
      *     nChars=0
      */
     public static String leftOf(String toSearchIn, String toSearchFor, boolean trimResult){
-        return rightOf(toSearchIn, toSearchFor, 0, trimResult);
+        return leftOf(toSearchIn, toSearchFor, 0, trimResult);
     }
 
     /**

@@ -36,7 +36,7 @@ class StringHelperTest {
 
     @Test // normal case
     void leftOf1() {
-        assertEquals("123", StringHelper.leftOf(testString,"bill",4, false));
+        assertEquals(" 123", StringHelper.leftOf(testString,"bill",4, false));
     }
     @Test // toSearchFor not found
     void leftOf2() {
@@ -52,7 +52,7 @@ class StringHelperTest {
     }
     @Test // trimResult = true
     void leftOf5() {
-        assertEquals("test ", StringHelper.leftOf(testString,"string",0, true));
+        assertEquals("test", StringHelper.leftOf(testString,"string",0, true));
     }
     @Test // toSearchIn = null
     void leftOf6() {
