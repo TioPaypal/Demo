@@ -9,12 +9,13 @@ import java.math.BigDecimal;
 public class StringHelper {
 
     /**
-     *
-     * @param toSearchIn
-     * @param toSearchFor
-     * @param nChars
-     * @param trimResult
-     * @return
+     *  Provides nChars located directly to the right of the first occurrence of toSearchFor.
+     * @param toSearchIn String to look in
+     * @param toSearchFor String to look for
+     * @param nChars Maximum number of chars to return. If 0, return everything to the right of toSearchFor.
+     * @param trimResult whether or not to trim the results.
+     * @return Returns string of maximum nChars found in toSearchIn, right of the first occurrence of toSearchFor
+     *  returns an empty string if toSearchFor is not found within toSearchIn
      */
     public static String rightOf(String toSearchIn, String toSearchFor, int nChars, boolean trimResult) {
 
@@ -47,12 +48,13 @@ public class StringHelper {
     }
 
     /**
-     *
-     * @param toSearchIn
-     * @param toSearchFor
-     * @param nChars
-     * @param trimResult
-     * @return
+     *  Provides nChars located directly to the left of the first occurrence of toSearchFor.
+     * @param toSearchIn String to look in
+     * @param toSearchFor String to look for
+     * @param nChars Maximum number of chars to return. If 0, return everything to the left of toSearchFor.
+     * @param trimResult whether or not to trim the results.
+     * @return Returns string of maximum nChars found in toSearchIn, left of the first occurrence of toSearchFor
+     *  returns an empty string if toSearchFor is not found within toSearchIn
      */
     public static String leftOf(String toSearchIn, String toSearchFor, int nChars, boolean trimResult) {
         return null;
@@ -85,11 +87,11 @@ public class StringHelper {
 
     /**
      *
-     * @param toSaerchIn
-     * @param leftLimit
-     * @param rightLimit
-     * @param trimResult
-     * @return
+     * @param toSaerchIn String to search within
+     * @param leftLimit left delimiting value
+     * @param rightLimit right delimiting value
+     * @param trimResult whether or not to trim the results.
+     * @return provides a string of maximum nChars found in toSearchIn,  delimited at left by "leftLimit" and at the right side by "rightLimit"
      */
     public static String between(String toSaerchIn, String leftLimit, String rightLimit, boolean trimResult) {
         return null;
