@@ -7,61 +7,60 @@ class StringHelperTest {
 
     @Test // normal case
     void rightOf1() {
-        assertEquals("bill",StringHelper.rightOf(testString,"123",4, false));
+        assertEquals("bill", StringHelper.rightOf(testString,"123",4, false));
     }
     @Test // toSearchFor not found
     void rightOf2() {
-        assertEquals("",StringHelper.rightOf(  testString,"TTT",5,false));
+        assertEquals("", StringHelper.rightOf(  testString,"TTT",5,false));
     }
     @Test // nChars = 0
     void rightOf3() {
-        assertEquals("bill Pay ",StringHelper.rightOf(testString,"123", 0,false));
+        assertEquals("bill Pay ", StringHelper.rightOf(testString,"123", 0,false));
     }
     @Test // nChars != 0
     void rightOf4() {
-        assertEquals("bi",StringHelper.rightOf(testString,"123",2));
+        assertEquals("bi", StringHelper.rightOf(testString,"123",2));
     }
     @Test // trimResult = true
     void rightOf5() {
-        assertEquals("123bill Pay",StringHelper.rightOf(testString,"string",0, true));
+        assertEquals("123bill Pay", StringHelper.rightOf(testString,"string",0, true));
     }
     @Test // toSearchIn = null
     void rightOf6() {
-        assertEquals("",StringHelper.rightOf(null,"123",0));
+        assertEquals("", StringHelper.rightOf(null,"123",0));
     }
     @Test // toSearchFor = null
     void rightOf7() {
-        assertEquals("",StringHelper.rightOf(testString,null,0));
+        assertEquals("", StringHelper.rightOf(testString,null,0));
     }
 
-    @Test
-    void leftOf() {
-        fail("TODO");
-    }
-
-    @Test
+    @Test // normal case
     void leftOf1() {
-        fail("TODO");
+        assertEquals("123", StringHelper.leftOf(testString,"bill",4, false));
     }
-
-    @Test
+    @Test // toSearchFor not found
     void leftOf2() {
-        fail("TODO");
+        assertEquals("", StringHelper.leftOf(testString,"TTT",5,false));
     }
-
-    @Test
+    @Test // nChars = 0
     void leftOf3() {
-        fail("TODO");
+        assertEquals("test string ", StringHelper.leftOf(testString,"123", 0,false));
     }
-
-    @Test
-    void between() {
-        fail("TODO");
+    @Test // nChars != 0
+    void leftOf4() {
+        assertEquals("g ", StringHelper.leftOf(testString,"123",2, false));
     }
-
-    @Test
-    void between1() {
-        fail("TODO");
+    @Test // trimResult = true
+    void leftOf5() {
+        assertEquals("test ", StringHelper.leftOf(testString,"string",0, true));
+    }
+    @Test // toSearchIn = null
+    void leftOf6() {
+        assertEquals("", StringHelper.leftOf(null,"123",0));
+    }
+    @Test // toSearchFor = null
+    void leftOf7() {
+        assertEquals("", StringHelper.leftOf(testString,null,0));
     }
 
     @Test
