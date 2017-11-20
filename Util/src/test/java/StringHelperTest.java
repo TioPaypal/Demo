@@ -65,14 +65,12 @@ class StringHelperTest {
 
     @Test
     void getFlatPhoneNumber() {
-        fail("TODO");
+        assertEquals("11231231234", StringHelper.getFlatPhoneNumber("1-123-123-1234"));
     }
 
     @Test
     void getFormatedPhoneNumber() {
-        fail("TODO");
+        assertEquals("1-123-123-1234", StringHelper.getFlatPhoneNumber("11231231234"));
     }
-
-
 
 }
