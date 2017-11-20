@@ -120,18 +120,18 @@ public class StringHelper {
     }
 
     /**
-     *
-     * @param phoneNumber
-     * @return
+     * From a formated phone number, reutrn the flat phone number (10digits)
+     * @param phoneNumber the formated phone number X-XXX-XXX-XXXX
+     * @return a flat phone number XXXXXXXXXXX
      */
     public static String getFlatPhoneNumber(String phoneNumber){
         return phoneNumber.replaceAll("[^0-9.]","");
     }
 
     /**
-     *
-     * @param phoneNumber
-     * @return
+     * From a flat phone number, return as a string the formatted phone number
+     * @param phoneNumber a flat phone number XXXXXXXXXXX (10 dig)
+     * @return a phone number with the format X-XXX-XXX-XXXX
      */
     public static String getFormatedPhoneNumber(String phoneNumber){
         String seperator = "-";
