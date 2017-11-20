@@ -70,7 +70,7 @@ class StringHelperTest {
 
     @Test
     void getFormatedPhoneNumber() {
-        assertEquals("1-123-123-1234", StringHelper.getFlatPhoneNumber("11231231234"));
+        assertEquals("1-123-123-1234", StringHelper.getFormatedPhoneNumber("11231231234"));
     }
 
 }

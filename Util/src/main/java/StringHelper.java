@@ -125,7 +125,7 @@ public class StringHelper {
      * @return
      */
     public static String getFlatPhoneNumber(String phoneNumber){
-        return null;
+        return phoneNumber.replaceAll("[^0-9.]","");
     }
 
     /**
@@ -134,7 +134,17 @@ public class StringHelper {
      * @return
      */
     public static String getFormatedPhoneNumber(String phoneNumber){
-        return null;
+        String seperator = "-";
+        String formatedNumber = new StringBuilder()
+                .append(phoneNumber.substring(0,1))
+                .append(seperator)
+                .append(phoneNumber.substring(1,4))
+                .append(seperator)
+                .append(phoneNumber.substring(4,7))
+                .append(seperator)
+                .append(phoneNumber.substring(7,11))
+                .toString();
+        return formatedNumber;
     }
 
 
