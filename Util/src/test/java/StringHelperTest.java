@@ -15,7 +15,7 @@ class StringHelperTest {
     }
     @Test // nChars = 0
     void rightOf3() {
-        assertEquals("bill Pay",StringHelper.rightOf(testString,"123", 0));
+        assertEquals("bill Pay ",StringHelper.rightOf(testString,"123", 0,false));
     }
     @Test // nChars != 0
     void rightOf4() {

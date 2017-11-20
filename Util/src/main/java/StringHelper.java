@@ -18,9 +18,23 @@ public class StringHelper {
      *  returns an empty string if toSearchFor is not found within toSearchIn
      */
     public static String rightOf(String toSearchIn, String toSearchFor, int nChars, boolean trimResult) {
+        if (toSearchFor == null || toSearchIn == null) return "";
+        int firstO = toSearchIn.indexOf(toSearchFor);
 
-        return null;
+        if (firstO < 0) return "";
+
+        if (nChars == 0) {
+            nChars = toSearchIn.length() - firstO - toSearchFor.length();
+        }
+
+        String res = toSearchIn.substring(firstO + toSearchFor.length() ,firstO + toSearchFor.length()+ nChars);
+        if (trimResult) {
+            res = res.trim();
+        }
+
+        return res;
     }
+
 
     /**
      * Overloaded method with default param(s):
