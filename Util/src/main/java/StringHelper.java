@@ -121,6 +121,9 @@ public class StringHelper {
      * @return provides a string  delimited at left by "leftLimit" and at the right side by "rightLimit" found in toSearchIn
      */
     public static String between(String toSearchIn, String leftLimit, String rightLimit, boolean trimResult) {
+        if (toSearchIn == null || leftLimit == null || rightLimit ==null ){
+            return "";
+        }
         int right = -1;
         int left = toSearchIn.indexOf(leftLimit);
         if (rightLimit.equals(leftLimit)|| leftLimit.indexOf(rightLimit) >= 0){
