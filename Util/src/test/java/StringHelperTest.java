@@ -118,6 +118,7 @@ class StringHelperTest {
     void between5() {
         assertEquals("is a", StringHelper.between("this is a test", "this", "test", true));
     }
+
     @Test
         // toSearchIn == null
     void between6() { //toSearchIn = null
