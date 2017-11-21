@@ -63,14 +63,22 @@ class StringHelperTest {
         assertEquals("", StringHelper.leftOf(testString,null,0));
     }
 
-    @Test
+    @Test // Valid number
     void getFlatPhoneNumber() {
-        assertEquals("11231231234", StringHelper.getFlatPhoneNumber("1-123-123-1234"));
+        assertEquals("1231231234", StringHelper.getFlatPhoneNumber("(123)-123-1234"));
+    }
+    @Test // invalid number (too long)
+    void getFlatPhoneNumber2() {
+        assertEquals("", StringHelper.getFlatPhoneNumber("(123)-123-123456"));
+    }
+    @Test // invalid number (too short)
+    void getFlatPhoneNumber3() {
+        assertEquals("", StringHelper.getFlatPhoneNumber("(123)-123-12"));
     }
 
     @Test
     void getFormatedPhoneNumber() {
-        assertEquals("1-123-123-1234", StringHelper.getFormatedPhoneNumber("11231231234"));
+        assertEquals("(123)-123-1234", StringHelper.getFormatedPhoneNumber("11231231234"));
     }
 
 }

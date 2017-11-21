@@ -135,24 +135,28 @@ public class StringHelper {
 
     /**
      * From a formated phone number, reutrn the flat phone number (10digits)
-     * @param phoneNumber the formated phone number X-XXX-XXX-XXXX
+     * @param phoneNumber the formated phone number (XXX)-XXX-XXXX
      * @return a flat phone number XXXXXXXXXXX
      */
     public static String getFlatPhoneNumber(String phoneNumber){
-        return phoneNumber.replaceAll("[^0-9.]","");
+        String flat = phoneNumber.replaceAll("[^0-9.]","");
+        if (flat.length() != 10) {
+                return "";
+        }
+        return flat;
     }
 
     /**
      * From a flat phone number, return as a string the formatted phone number
      * @param phoneNumber a flat phone number XXXXXXXXXXX (10 dig)
-     * @return a phone number with the format X-XXX-XXX-XXXX
+     * @return a phone number with the format (XXX)-XXX-XXXX
      */
     public static String getFormatedPhoneNumber(String phoneNumber){
         String seperator = "-";
         String formatedNumber = new StringBuilder()
-                .append(phoneNumber.substring(0,1))
-                .append(seperator)
+                .append("(")
                 .append(phoneNumber.substring(1,4))
+                .append(")")
                 .append(seperator)
                 .append(phoneNumber.substring(4,7))
                 .append(seperator)
